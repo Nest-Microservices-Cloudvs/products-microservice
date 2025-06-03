@@ -5,17 +5,17 @@ import { UpdateProductDto } from './dto/update-product.dto';
 
 @Injectable()
 export class ProductsService extends PrismaClient implements OnModuleInit {
-
   private readonly logger = new Logger('ProductsService');
 
   onModuleInit() {
-    this.$connect()
+    this.$connect();
     this.logger.log('Prisma Client connected successfully');
   }
 
   create(createProductDto: CreateProductDto) {
-    
-    // return 'This action adds a new product';
+    return this.product.create({
+      data: createProductDto,
+    });
   }
 
   findAll() {
