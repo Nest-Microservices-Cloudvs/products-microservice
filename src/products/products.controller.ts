@@ -1,7 +1,4 @@
-import {
-  Controller,
-  ParseIntPipe
-} from '@nestjs/common';
+import { Controller, ParseIntPipe } from '@nestjs/common';
 import { MessagePattern, Payload } from '@nestjs/microservices';
 import { PaginationDto } from 'src/common';
 import { CreateProductDto } from './dto/create-product.dto';
@@ -35,7 +32,7 @@ export class ProductsController {
   update(
     // @Param('id', ParseIntPipe) id: number,
     // @Body() updateProductDto: UpdateProductDto,
-    @Payload() updateProductDto: UpdateProductDto
+    @Payload() updateProductDto: UpdateProductDto,
   ) {
     return this.productsService.update(updateProductDto.id, updateProductDto);
   }
