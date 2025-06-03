@@ -19,6 +19,8 @@ export class ProductsService extends PrismaClient implements OnModuleInit {
   }
 
   findAll() {
+    return this.product.findMany({
+    })
     return `This action returns all products`;
   }
 
